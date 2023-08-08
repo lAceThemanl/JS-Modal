@@ -12,33 +12,56 @@
    ###########################*/
 
 body {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#bg-img {
     background: url(img/bg-waldo.jpg)no-repeat center center/ cover;
     height: 100vh;
-    position: relative;
+    z-index: 1;
 }
 
 .header {
-    width: 20%;
+    margin-bottom: 8em;
     text-align: center;
-    margin: auto;
     z-index: 2;
-    background-color: #fff;
-    border: 3px solid blue;
+}
+
+.header-text {
+    margin-bottom: .5em;
+   color: #000;
+}
+
+#btn-start {
+    width: 100px;
+    font-size: 1rem;
+    background: #fff;
     color: red;
+    border: solid 2px red;
     border-radius: 10px;
-    padding: 5px 20px;
+    padding: 5px;
+    box-shadow: 0 0 3px black;
+    transition: width .5s;
+}
+
+#btn-start:hover {
+    width: 110px;
 }
 
 #help-btn {
+    display: none;
     position: absolute;
-    top: 10%;
-    left: 45%;
+    bottom: 5%;
+    right: 5%;
     
     width: 10%;
     font-size: 1.25rem;
-    background: transparent;
-    color: #fff;
-    border: solid 2px #fff;
+    color: black;
+    border: solid 2px #000;
     border-radius: 10px;
     padding: 5px;
     box-shadow: 0 0 3px black;
@@ -47,8 +70,13 @@ body {
 }
 
 #help-btn:hover {
+    width: 11%;
     background-color: #fff;
     color: #000;
+}
+
+.welcomeWaldo {
+    margin: 0 3em .5em 0;
 }
 
 /* Modal Help Container */
@@ -109,6 +137,7 @@ body {
 #modal-btn:hover {
     border: solid 2px blue;
     color: blue;
+    width: 185px;
 }
 
 /* Modal Help Container Two*/
@@ -155,6 +184,7 @@ body {
     padding: 20px 0 0 0;
     background: transparent;
     border: none;
+    z-index: 2;
 }
 
 .btn-waldo-found-clicked {
@@ -225,6 +255,9 @@ body {
     z-index: 2;
 }
 
+#btn-reset:hover {
+    width: 35%;
+}
 /* #modal {
     background-color: #fff;
     position: absolute;

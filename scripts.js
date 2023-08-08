@@ -1,7 +1,9 @@
 // Variables
 
+let btnStart = document.getElementById('btn-start');
+let bgImg = document.getElementById('bg-img');
 let header = document.querySelector('.header');
-let openBtn = document.getElementById('help-btn');
+let helpBtn = document.getElementById('help-btn');
 let modalContainer = document.getElementById('modal-help');
 
 let openBtn2 = document.getElementById('modal-btn');
@@ -14,11 +16,17 @@ let btnReset = document.getElementById('btn-reset');
 
 // Event Listeners
 
-openBtn.addEventListener('click', function() {
+btnStart.addEventListener('click', function() {
+    header.style.display = 'none';
+    bgImg.style.width = '100%';
+    helpBtn.style.display = 'block';
+});
+
+helpBtn.addEventListener('click', function() {
 
     modalContainer.style.display = 'block';
     header.style.display = 'none';
-    openBtn.style.display = 'none';
+    helpBtn.style.display = 'none';
 
 });
 
@@ -34,7 +42,7 @@ btnWaldoFound.addEventListener('click', function() {
     btnWaldoFoundClicked.style.display = 'block';
     modalContainer.style.display = 'none';
     header.style.display = 'none';
-    openBtn.style.display = 'none';
+    helpBtn.style.display = 'none';
     modalContainer2.style.display = 'none';
 
 });
@@ -45,7 +53,7 @@ btnReset.addEventListener('click', function() {
     btnWaldoFoundClicked.style.display = 'none';
     modalContainer.style.display = 'none';
     header.style.display = 'block';
-    openBtn.style.display = 'block';
     modalContainer2.style.display = 'none';
+    bgImg.style.width = '0%';
 
 });
