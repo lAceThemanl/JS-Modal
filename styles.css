@@ -25,15 +25,32 @@ body {
     z-index: 1;
 }
 
+.welcomeWaldo {
+    margin: 0 3em .5em 0;
+}
+
 .header {
     margin-bottom: 8em;
     text-align: center;
     z-index: 2;
+
+    animation-name: welcomemodal;
+    animation-duration: 3.25s;
 }
 
+@keyframes welcomemodal {
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+  
 .header-text {
     margin-bottom: .5em;
-   color: #000;
+    color: #000;
 }
 
 #btn-start {
@@ -45,11 +62,30 @@ body {
     border-radius: 10px;
     padding: 5px;
     box-shadow: 0 0 3px black;
-    transition: width .5s;
+    transition: scale .5s, width .5s;
+    cursor: pointer;
+
+    animation-name: btnpulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btnpulse {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.20;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
 
 #btn-start:hover {
-    width: 110px;
+    width: 45%;
 }
 
 #help-btn {
@@ -67,16 +103,23 @@ body {
     box-shadow: 0 0 3px black;
     transition: .5s;
     z-index: 2;
+    cursor: pointer;
+
+    animation-name: helpbtn;
+    animation-duration: 1.5s;
+
+}
+
+@keyframes helpbtn {
+    from {
+        opacity: 0;
+        scale: 0;
+    }
 }
 
 #help-btn:hover {
-    width: 11%;
-    background-color: #fff;
-    color: #000;
-}
-
-.welcomeWaldo {
-    margin: 0 3em .5em 0;
+    scale: 1.1;
+    background-color: #e2e2e2;
 }
 
 /* Modal Help Container */
@@ -91,6 +134,16 @@ body {
     z-index: 1;
     background-color: #fff;
     border-right: solid 3px blue;
+
+    animation-name: helpmodalcontent;
+    animation-duration: 2s;
+}
+
+@keyframes helpmodalcontent {
+    from {
+        width: 0;
+        opacity: 0;
+    }
 }
 
 .img-help-1 {
@@ -98,6 +151,17 @@ body {
     position: absolute;
     top: 0;
     left: 5%;
+
+    animation-name: imgmodal;
+    animation-duration: 3s;
+}
+
+@keyframes imgmodal {
+    0% {
+        scale: .8;
+        opacity: 0;
+    }
+
 }
 
 .modal-content {
@@ -132,6 +196,7 @@ body {
     box-shadow: 0 0 3px black;
     transition: .5s;
     z-index: 2;
+    cursor: pointer;
 }
 
 #modal-btn:hover {
@@ -144,7 +209,7 @@ body {
 
 #modal-help-2 {
     display: none;
-    position: fixed;
+    position: absolute;
     bottom: 0;
     right: 0;
     width: 50%;
@@ -152,6 +217,16 @@ body {
     z-index: 2;
     border-top: solid 3px blue;
     background-color: #fff;
+
+    animation-name: helpmodaltwo;
+    animation-duration: 2s;
+}
+
+@keyframes helpmodaltwo {
+    0% {
+        height: 30%;
+        opacity: 0;
+    }
 }
 
 .modal-icon-2 {
@@ -253,10 +328,29 @@ body {
     box-shadow: 0 0 3px blue;
     transition: .5s;
     z-index: 2;
+    cursor: pointer;
+
+    animation-name: btnpulse;
+    animation-duration: 2.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes btnpulse {
+    0% {
+        scale: 1;
+    }
+
+    50% {
+        scale: 1.20;
+    }
+
+    100% {
+        scale: 1;
+    }
 }
 
 #btn-reset:hover {
-    width: 35%;
+    width: 40%;
 }
 /* #modal {
     background-color: #fff;
